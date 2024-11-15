@@ -5,121 +5,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glamping La Mirande</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
-<nav aria-label="Main Navigation">
-    <a href="/">Home</a>
-    <a href="/">Accommodaties</a>
-    <a href="/">Beschikbaarheid</a>
-    <a href="/">Omgeving</a>
-    <a href="/">Contact</a>
-    <a href="/">FAQ/Vragen</a>
-    <a href="/">Info</a>
-</nav>
+<header>
+    <nav aria-label="Main Navigation" id="main-nav" class="main-nav">
+        <div class="main-nav-content" id="main-nav-content" class="main-nav-content">
+            <a href="#">Home</a>
+            <a href="#">accommodaties</a>
+            <a href="#">beschikbaarheid</a>
+            <a href="#">omgeving</a>
+            <a href="#">Contact</a>
+            <a href="#">faq/vragen</a>
+            <a href="#">info</a>
+            <a href="javascript:void(0);" class="icon" onclick="navFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </nav>
+    <div id="header-title">
+        <div><span id="title-big">glamping La Mirande</span><span
+                id="title-small">, een droomplek in zuid Frankrijk</span></div>
+    </div>
+
+</header>
 
 <main>
-    <form action="#" method="post" aria-labelledby="form-title">
-        <h1 id="form-title">Reserveringsformulier</h1>
-        <label for="voornaam">Voornaam:</label>
-        <input type="text" id="voornaam" name="voornaam" maxlength="40" required aria-required="true"><br><br>
+    <div id="error-message" aria-live="polite" class="sr-only"></div>
 
-        <label for="tussenvoegsel">Tussenvoegsel:</label>
+    <form action="#" method="post" aria-labelledby="form-title">
+        <h2 id="form-title">Reserveringsformulier</h2>
+
+        <label for="voornaam">Voornaam</label>
+        <input type="text" id="voornaam" name="voornaam" maxlength="40" required><br><br>
+
+        <label for="tussenvoegsel">Tussenvoegsel</label>
         <input type="text" id="tussenvoegsel" name="tussenvoegsel" maxlength="10"><br><br>
 
-        <label for="achternaam">Achternaam:</label>
-        <input type="text" id="achternaam" name="achternaam" maxlength="40" required aria-required="true"><br><br>
+        <label for="achternaam">Achternaam</label>
+        <input type="text" id="achternaam" name="achternaam" maxlength="40" required><br><br>
 
-        <label for="geslacht">Geslacht:</label>
-        <select id="geslacht" name="geslacht" aria-required="true">
+        <label for="geslacht">Geslacht</label>
+        <select id="geslacht" name="geslacht" required>
+            <option value="" disabled selected>Kies een optie</option>
             <option value="man">Man</option>
             <option value="vrouw">Vrouw</option>
             <option value="non-binair">Non-binair</option>
             <option value="anders">Anders</option>
         </select><br><br>
 
-        <label for="straat">Straat:</label>
-        <input type="text" id="straat" name="straat" maxlength="40" required aria-required="true"><br><br>
+        <label for="straat">Straat</label>
+        <input type="text" id="straat" name="straat" maxlength="40" required><br><br>
 
-        <label for="huisnummer">Huisnummer:</label>
-        <input type="text" id="huisnummer" name="huisnummer" maxlength="10" required aria-required="true"><br><br>
+        <label for="huisnummer">Huisnummer</label>
+        <input type="text" id="huisnummer" name="huisnummer" maxlength="10" required><br><br>
 
-        <label for="postcode">Postcode:</label>
-        <input type="text" id="postcode" name="postcode" maxlength="8" required aria-required="true"><br><br>
+        <label for="postcode">Postcode</label>
+        <input type="text" id="postcode" name="postcode" maxlength="8" required><br><br>
 
-        <label for="woonplaats">Woonplaats:</label>
-        <input type="text" id="woonplaats" name="woonplaats" maxlength="40" required aria-required="true"><br><br>
+        <label for="woonplaats">Woonplaats</label>
+        <input type="text" id="woonplaats" name="woonplaats" maxlength="40" required><br><br>
 
-        <label for="telefoonnummer">Telefoonnummer:</label>
-        <input type="text" id="telefoonnummer" name="telefoonnummer" maxlength="12" required aria-required="true" aria-label="Telefoonnummer"><br><br>
+        <label for="telefoonnummer">Telefoonnummer</label>
+        <input type="text" id="telefoonnummer" name="telefoonnummer" maxlength="12" required
+               aria-label="Telefoonnummer"><br><br>
 
-        <label for="emailadres">Emailadres:</label>
-        <input type="email" id="emailadres" name="emailadres" maxlength="50" required aria-required="true"><br><br>
+        <label for="emailadres">Emailadres</label>
+        <input type="email" id="emailadres" name="emailadres" maxlength="50" required><br><br>
 
-        <label for="volwassenen">Aantal volwassenen:</label>
-        <input type="number" id="volwassenen" name="volwassenen" max="999" required aria-required="true" aria-describedby="volwassenen-desc">
+        <label for="volwassenen">Aantal volwassenen</label>
+        <input type="number" id="volwassenen" name="volwassenen" max="999" required aria-describedby="volwassenen-desc">
         <span id="volwassenen-desc" class="sr-only">Vul het aantal volwassenen in het gezelschap in</span><br><br>
 
-        <label for="kinderen">Aantal kinderen:</label>
+        <label for="kinderen">Aantal kinderen</label>
         <input type="number" id="kinderen" name="kinderen" max="999" aria-describedby="kinderen-desc">
         <span id="kinderen-desc" class="sr-only">Vul het aantal kinderen in het gezelschap in</span><br><br>
 
-        <label for="huisdieren">Aantal huisdieren:</label>
+        <label for="huisdieren">Aantal huisdieren</label>
         <input type="number" id="huisdieren" name="huisdieren" max="999" aria-describedby="huisdieren-desc">
         <span id="huisdieren-desc" class="sr-only">Vul het aantal huisdieren in het gezelschap in</span><br><br>
 
-        <label for="auto">Aantal auto's:</label>
+        <label for="auto">Aantal auto's</label>
         <input type="number" id="auto" name="auto" max="999" aria-describedby="auto-desc">
         <span id="auto-desc" class="sr-only">Vul het aantal auto's in het gezelschap in</span><br><br>
 
-        <label for="kenteken">Kenteken(s):</label>
+        <label for="kenteken">Kenteken(s)</label>
         <input type="text" id="kenteken" name="kenteken" maxlength="10"><br><br>
 
-        <label for="soortCampingplek">Soort Campingplek:</label>
-        <select id="soortCampingplek" name="soortCampingplek" aria-required="true">
+        <label for="soortCampingplek">Soort Campingplek</label>
+        <select id="soortCampingplek" name="soortCampingplek" required>
+            <option value="" disabled selected>Kies een optie</option>
             <option value="klein">Klein</option>
             <option value="middel">Middel</option>
             <option value="groot">Groot</option>
         </select><br><br>
 
-        <label for="aankomstdatum">Aankomstdatum:</label>
-        <input type="date" id="aankomstdatum" name="aankomstdatum" required aria-required="true"><br><br>
+        <label for="aankomstdatum">Aankomstdatum</label>
+        <input type="date" id="aankomstdatum" name="aankomstdatum" required><br><br>
 
-        <label for="vertrekdatum">Vertrekdatum:</label>
-        <input type="date" id="vertrekdatum" name="vertrekdatum" required aria-required="true"><br><br>
+        <label for="vertrekdatum">Vertrekdatum</label>
+        <input type="date" id="vertrekdatum" name="vertrekdatum" required><br><br>
+
+        <label for="elektriciteit">Elektriciteit nodig?</label>
+        <select id="elektriciteit" name="elektriciteit" required>
+            <option value="" disabled selected>Kies een optie</option>
+            <option value="ja">Ja</option>
+            <option value="nee">Nee</option>
+        </select><br><br>
+
+        <label for="stromendwater">Stromend water nodig?</label>
+        <select id="stromendwater" name="stromendwater" required>
+            <option value="" disabled selected>Kies een optie</option>
+            <option value="ja">Ja</option>
+            <option value="nee">Nee</option>
+        </select><br><br>
 
         <fieldset>
-            <legend>Elektriciteit nodig?</legend>
-            <input type="radio" id="elektriciteitJa" name="elektriciteit" value="ja">
-            <label for="elektriciteitJa">Ja</label>
-            <input type="radio" id="elektriciteitNee" name="elektriciteit" value="nee">
-            <label for="elektriciteitNee">Nee</label>
-        </fieldset><br>
+            <legend>Interesses</legend>
+            <div class="checkbox-group">
+                <input type="checkbox" id="zwembad" name="interesses" value="zwembad">
+                <label for="zwembad">Zwembad</label><br>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="tennis" name="interesses" value="tennis">
+                <label for="tennis">Tennisbaan</label><br>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="animatie" name="interesses" value="animatie">
+                <label for="animatie">Animatie</label><br>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="fietsverhuur" name="interesses" value="fietsverhuur">
+                <label for="fietsverhuur">Fietsverhuur</label>
+            </div>
+        </fieldset>
+        <br><br>
 
-        <fieldset>
-            <legend>Stromend water nodig?</legend>
-            <input type="radio" id="stromendWaterJa" name="stromendwater" value="ja">
-            <label for="stromendWaterJa">Ja</label>
-            <input type="radio" id="stromendWaterNee" name="stromendwater" value="nee">
-            <label for="stromendWaterNee">Nee</label>
-        </fieldset><br>
-
-        <label>Interesses:</label><br>
-        <input type="checkbox" id="zwembad" name="interesses" value="zwembad">
-        <label for="zwembad">Zwembad</label><br>
-        <input type="checkbox" id="tennis" name="interesses" value="tennis">
-        <label for="tennis">Tennisbaan</label><br>
-        <input type="checkbox" id="animatie" name="interesses" value="animatie">
-        <label for="animatie">Animatie</label><br>
-        <input type="checkbox" id="fietsverhuur" name="interesses" value="fietsverhuur">
-        <label for="fietsverhuur">Fietsverhuur</label><br><br>
-
-        <input type="submit" value="Versturen">
+        <input class="button" type="submit" value="Versturen">
     </form>
 </main>
 
-<footer aria-label="Footer">
-    <p>Glamping La Mirande</p>
-</footer>
 </body>
 </html>
